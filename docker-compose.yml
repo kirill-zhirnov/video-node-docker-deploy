@@ -1,0 +1,21 @@
+services:
+  node:
+    build:
+      context: ./
+      dockerfile: ./.docker/node.Dockerfile
+    restart: unless-stopped
+    deploy:
+      mode: replicated
+      replicas: 2
+
+  nginx:
+    build:
+      context: ./
+      dockerfile: ./.docker/nginx.Dockerfile
+      args:
+        DOCKER_NGINX_NODE_HOST: ${DOCKER_NGINX_NODE_HOST:-node}
+    restart: unless-stopped
+    ports:
+      - "${DOCKER_NGINX_OUT_PORT:-8080}:80"
+    depends_on:
+      - node

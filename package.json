@@ -1,0 +1,19 @@
+{
+  "name": "video-node-docker-deploy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "18",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "dev": "npx ts-node ./src/server.ts",
+    "build": "rm -rf ./dist/ && npx tsc --project tsconfig.json",
+    "start": "node ./dist/server.js"
+  }
+}

@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"target": "ES2019",
+		"module": "commonjs",
+		"lib": [
+			"dom",
+			"es2019",
+			"es2020"
+		],
+		"jsx": "react-jsx",
+		"sourceMap": true,
+		"outDir": "dist",
+		"removeComments": false,
+		"strict": true,
+		"skipLibCheck": true,
+		"noImplicitAny": true,
+		"moduleResolution": "node",
+		"typeRoots": [
+			"./node_modules/@types",
+		],
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"forceConsistentCasingInFileNames": true
+	},
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.tsx"
+	]
+}
